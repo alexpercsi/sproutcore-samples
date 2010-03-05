@@ -61,8 +61,6 @@ TableView.mainPage = SC.Page.design({
       contentBinding:   'TableView.moviesController.arrangedObjects',
       selectionBinding: 'TableView.moviesController.selection',
       canReorderContent: YES,
-      exampleView: SC.TableRowView,
-      recordType: TableView.Movie
     }),
 
     bottomView: SC.View.design(SC.Border, {
