@@ -1,0 +1,120 @@
+/*.disclosure {
+	width: 10px;
+	height: 10px;
+	float: left;
+}
+
+.disclosure.undefined {
+	display: none;
+}
+
+label {
+	opacity: .5 !important;
+}*/
+
+.sc-collection-view .cv-level.retain div {
+	position: static !important;
+	opacity: 1 !important;
+}
+
+.sc-collection-view .cv-level, .sc-collection-view .cv-level.retain {
+	opacity: 1 !important;
+}
+
+.sc-collection-view .cv-level, .sc-collection-view .cv-level div {
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	right: 0px;
+	bottom: 0px;
+/*	opacity: .4;*/
+}
+
+
+div.resizing-columns div.cell{
+	position: relative !important;
+	float: left !important;
+	left: 0px !important;
+}
+
+div.ghost, div.blocker {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+/*	padding: 0px 5px 0px 6px;*/
+
+	background-color: white;
+}
+
+div.blocker {
+	background-color: #999;
+}
+
+div.ghost {
+	opacity: .8;
+}
+
+div.ghost div.cell {
+	position: relative !important;
+	left: 0px !important;
+/*	float: left !important	left: 0px !important;*/
+}
+
+div.cell {
+	font-family: Helvetica;
+	font-size: 12px;
+	color: rgba(0, 0, 0, .85);
+	position: absolute !important;
+	overflow: hidden !important;
+	top: 0;
+	bottom: 0;
+	text-overflow: ellipsis !important;
+	top: 0px; bottom: 0px;
+	min-height: 1px;
+	white-space: nowrap;
+	line-height: 22px;
+/*	padding: 0px 5px;*/
+/*	border-right: 1px solid rgba(0, 0, 0, .08);*/
+/*	margin-left: -1px !important;*/
+}
+
+
+div.sc-dataview-row {
+	background-color: white;
+}
+
+div.sc-dataview-row.even {
+	background-color: #f3f7fb;
+}
+
+div.sc-dataview-row.sel {
+	background-color: #278eea;
+}
+	
+	div.sc-dataview-row.sel .cell {
+		color: white !important;		
+	}
+	
+	div.sc-dataview-row label, div.ghost label {
+/*		position: absolute;*/
+		display: block;
+		padding: 0px 8px;
+		left: 0px;
+		right: 0px;
+		top: 0px;
+		bottom: 0px;
+		border-right: 1px solid rgba(0, 0, 0, .08);
+		overflow: hidden;
+		white-space: nowrap;
+		text-overflow: ellipsis;
+	}
+	
+div.endash-table-view {
+}
+
+.endash-toolbar {
+	background-image: static_url('toolbar.png') !important;
+	background-position: top left !important;
+	background-repeat: repeat-x !important;
+
+}
