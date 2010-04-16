@@ -9,7 +9,7 @@ var tableColumns = [
   SC.TableColumn.create({
     key:   'displayName',
     label: 'Title',
-    width: 300
+    width: 150
   }),
   
   SC.TableColumn.create({
@@ -36,21 +36,11 @@ TableView.mainPage = SC.Page.design({
     backgroundColor: "#333",
     
     childViews: 'topView middleView bottomView'.w(),
-		childViews: ['middleView'],
+		childViews: ['topView', 'middleView'],
     
-    topView: SC.View.design(SC.Border, {
-      layout: { top: 0, left: 0, right: 0, height: 41 },
-      childViews: 'labelView'.w(),
-      borderStyle: SC.BORDER_NONE,
-
-      labelView: SC.LabelView.design({
-        classNames: ['movies-title'],
-        layout: { centerY: 0, height: 24, left: 8, width: 200 },
-        controlSize: SC.LARGE_CONTROL_SIZE,
-        fontWeight: SC.BOLD_WEIGHT,
-        fontColor: "white",
-        value:   'IMDB Ratings'
-      })
+    topView: SC.View.design( {
+			classNames: ['endash-toolbar'],
+      layout: { top: 0, left: 0, right: 0, height: 50 }
     }),
     
     middleView: SC.TableView.design({
@@ -64,7 +54,7 @@ TableView.mainPage = SC.Page.design({
       selectionBinding: 'TableView.moviesController.selection',
       canReorderContent: YES,
     // }),
-      layout: { top: 0, bottom: 0, left: 0, right: 0 }
+      layout: { top: 51, bottom: 0, left: 0, right: 0 }
 			}),
 
     bottomView: SC.View.design(SC.Border, {
