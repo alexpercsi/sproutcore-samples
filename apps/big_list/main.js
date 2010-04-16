@@ -12,7 +12,8 @@
 // See comments for some pointers on what to do next.
 //
 BigList.main = function main() {
-
+	SC.BENCHMARK_RELOAD = YES ;
+	SC.Benchmark.verbose = YES ;
   // Step 1: Instantiate Your Views
   // The default code here will make the mainPane for your application visible
   // on screen.  If you app gets any level of complexity, you will probably 

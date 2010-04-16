@@ -13,9 +13,9 @@
 BigList.sourceController = SC.Object.create(
 /** @scope BigList.sourceController.prototype */ {
 
-  messageCount: 0,
+  messageCount: 1000,
   
-  sourceName: 'SparseArray',
+  sourceName: 'Array',
   
   sourceObject: function() {
     return this.get('make%@'.fmt(this.get('sourceName')));

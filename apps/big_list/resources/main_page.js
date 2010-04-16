@@ -18,11 +18,18 @@ BigList.mainPage = SC.Page.design({
       borderStyle: SC.BORDER_GRAY,
       hasHorizontalScroller: NO,
       
-      contentView: SC.ListView.design({
+      contentView: SC.DataView.design({
+				// useRenderer: NO,
+				rowHeight: 18,
+				
         contentValueKey: "subject",
         contentBinding: "BigList.rootController.arrangedObjects",
         canDeleteContent: YES,
-        canReorderContent: YES
+        canReorderContent: YES,
+
+				exampleView: SC.ListItemView.extend({
+					// useFactory: YES
+				})
       })
     }),
     
@@ -46,7 +53,7 @@ BigList.mainPage = SC.Page.design({
     countOptions: SC.SliderView.design({
       layout: { top: 76, left: 380, right: 100, height: 21 },
       minimum: 0,
-      maximum: 1000,
+      maximum: 100000,
       step: 1,
       valueBinding: 'BigList.sourceController.messageCount'
     }),

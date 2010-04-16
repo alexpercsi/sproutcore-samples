@@ -23,6 +23,15 @@ TableView.moviesController = SC.ArrayController.create(
   selectionDidChange: function() {
     console.log('selectionDidChange1');
     this.notifyPropertyChange('summary');
-  }.observes('*selection.[]')
+  }.observes('*selection.[]'),
+
+	valueForRowAndColumnInTableView: function(row, column, tableView) {
+		var item = this.objectAt(row),
+			columns = tableView.get('columns'),
+			column = columns.objectAt(column),
+			key = column.get('key')
+
+		return item.get(key)
+	}
   
 }) ;

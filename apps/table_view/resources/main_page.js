@@ -9,21 +9,53 @@ var tableColumns = [
   SC.TableColumn.create({
     key:   'displayName',
     label: 'Title',
-    width: 500
+    width: 80
   }),
   
   SC.TableColumn.create({
     key:   'rating',
     label: 'Rating',
-    width: 200,
-    minWidth: 150
+    width: 80,
   }),
   SC.TableColumn.create({
     key:   'votes',
     label: 'Votes',
-    width: 200,
-    minWidth: 150
-  })  
+    width: 80,
+	}),
+  SC.TableColumn.create({
+    key:   'displayName',
+    label: 'Title',
+    width: 80
+  }),
+
+  SC.TableColumn.create({
+    key:   'rating',
+    label: 'Rating',
+    width: 80,
+  }),
+  SC.TableColumn.create({
+   key:   'votes',
+   label: 'Votes',
+   width: 80
+	}),
+  SC.TableColumn.create({
+    key:   'displayName',
+    label: 'Title',
+    width: 80
+  }),
+
+  SC.TableColumn.create({
+    key:   'rating',
+    label: 'Rating',
+    width: 80,
+  }),
+  SC.TableColumn.create({
+    key:   'votes',
+    label: 'Votes',
+    width: 80,
+	})
+
+
 ];
 
 // This page describes the main user interface for your application.  
@@ -36,11 +68,12 @@ TableView.mainPage = SC.Page.design({
     backgroundColor: "#333",
     
     childViews: 'topView middleView bottomView'.w(),
+		childViews: ['middleView'],
     
     topView: SC.View.design(SC.Border, {
       layout: { top: 0, left: 0, right: 0, height: 41 },
       childViews: 'labelView'.w(),
-      borderStyle: SC.BORDER_BOTTOM,
+      borderStyle: SC.BORDER_NONE,
 
       labelView: SC.LabelView.design({
         classNames: ['movies-title'],
@@ -53,15 +86,18 @@ TableView.mainPage = SC.Page.design({
     }),
     
     middleView: SC.TableView.design({
+	// contentView: SC.DataView.design({
       backgroundColor: "white",
-      layout: { top: 42, bottom: 42, left: 0, right: 0 },
       
       columns: tableColumns,
-      flexibleColumn:   tableColumns.objectAt(0),
-      contentBinding:   'TableView.moviesController.arrangedObjects',
+      // flexibleColumn:   tableColumns.objectAt(0),
+      dataSourceBinding:   'TableView.moviesController',
+// contentBinding:   'TableView.moviesController',
       selectionBinding: 'TableView.moviesController.selection',
       canReorderContent: YES,
-    }),
+    // }),
+      layout: { top: 0, bottom: 0, left: 0, right: 0 }
+			}),
 
     bottomView: SC.View.design(SC.Border, {
       layout: { bottom: 0, left: 0, right: 0, height: 41 },

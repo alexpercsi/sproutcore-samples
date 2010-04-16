@@ -51,15 +51,15 @@ BigList.MessageSparseArray = SC.Object.extend(
   // 
   
   sparseArrayDidRequestLength: function(sa) {
-    console.log('sparseArrayDidRequestLength');
+    // console.log('sparseArrayDidRequestLength');
     this._do(function() { 
-      console.log('providinglength %@'.fmt(this.get('lengthConfig')));
+      // console.log('providinglength %@'.fmt(this.get('lengthConfig')));
       sa.provideLength(this.get('lengthConfig'));
     });
   },
   
   sparseArrayDidRequestRange: function(sa, range) {
-    console.log('sparseArrayDidRequestRange(%@)'.fmt(SC.inspect(range)));
+    // console.log('sparseArrayDidRequestRange(%@)'.fmt(SC.inspect(range)));
 
     range = SC.copy(range); // make sure this doesn't change
     this._do(function() {
@@ -97,7 +97,7 @@ BigList.MessageSparseArray = SC.Object.extend(
   
   // allow edits yo.  also make equivalent change on local objects...
   sparseArrayShouldReplace: function(sparseArray, idx, amt, objects) {
-    console.log('sparseArrayShouldReplace(idx=%@ amt=%@ objects=%@)'.fmt(idx, amt, objects));
+    // console.log('sparseArrayShouldReplace(idx=%@ amt=%@ objects=%@)'.fmt(idx, amt, objects));
     
     if (!this._objects) return NO ;
     this._objects.replace(idx, amt, objects);

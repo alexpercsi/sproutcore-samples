@@ -11,6 +11,8 @@
 // See comments for some pointers on what to do next.
 //
 function main() {
+	SC.BENCHMARK_RELOAD = YES ;
+		SC.Benchmark.verbose = YES ;
 
   SC.userDefaults.set('appDomain', 'SampleControls');
   

@@ -18,7 +18,7 @@
 BigList.MessageArray = SC.Object.extend(SC.Enumerable, SC.Array,
 /** @scope BigList.MessageArray.prototype */ {
 
-  lengthConfig: 0,
+  lengthConfig: 20000,
   
   // return object at specified index.  generates config...
   objectAt: function(idx) {
@@ -27,7 +27,7 @@ BigList.MessageArray = SC.Object.extend(SC.Enumerable, SC.Array,
     if (!objects) objects = this._objects = [];
     
     var ret = objects[idx];
-    if (!ret) ret = objects[idx] = BigList.Message.create({ id: idx });
+    if (!ret) ret = objects[idx] = BigList.Message.create({ id: idx, title: 'message ' + idx });
     return ret ;
   },
   
