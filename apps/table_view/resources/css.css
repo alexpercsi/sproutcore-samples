@@ -89,7 +89,12 @@ div.sc-dataview-row.even {
 
 div.sc-dataview-row.sel {
 	background-color: #278eea;
+	background-color: #579ad7;
 }
+	
+	div.sel .cell label {
+		border-right: 0px !important;
+	}
 	
 	div.sc-dataview-row.sel .cell {
 		color: white !important;		

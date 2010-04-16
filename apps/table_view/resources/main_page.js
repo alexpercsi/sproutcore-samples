@@ -9,7 +9,7 @@ var tableColumns = [
   SC.TableColumn.create({
     key:   'displayName',
     label: 'Title',
-    width: 150
+    width: 200
   }),
   
   SC.TableColumn.create({
