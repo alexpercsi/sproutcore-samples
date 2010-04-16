@@ -9,41 +9,9 @@ var tableColumns = [
   SC.TableColumn.create({
     key:   'displayName',
     label: 'Title',
-    width: 80
+    width: 300
   }),
   
-  SC.TableColumn.create({
-    key:   'rating',
-    label: 'Rating',
-    width: 80,
-  }),
-  SC.TableColumn.create({
-    key:   'votes',
-    label: 'Votes',
-    width: 80,
-	}),
-  SC.TableColumn.create({
-    key:   'displayName',
-    label: 'Title',
-    width: 80
-  }),
-
-  SC.TableColumn.create({
-    key:   'rating',
-    label: 'Rating',
-    width: 80,
-  }),
-  SC.TableColumn.create({
-   key:   'votes',
-   label: 'Votes',
-   width: 80
-	}),
-  SC.TableColumn.create({
-    key:   'displayName',
-    label: 'Title',
-    width: 80
-  }),
-
   SC.TableColumn.create({
     key:   'rating',
     label: 'Rating',
@@ -91,7 +59,7 @@ TableView.mainPage = SC.Page.design({
       
       columns: tableColumns,
       // flexibleColumn:   tableColumns.objectAt(0),
-      dataSourceBinding:   'TableView.moviesController',
+      dataSourceBinding:   'TableView.moviesController.arrangedObjects',
 // contentBinding:   'TableView.moviesController',
       selectionBinding: 'TableView.moviesController.selection',
       canReorderContent: YES,
