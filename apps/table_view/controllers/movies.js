@@ -13,6 +13,8 @@
 TableView.moviesController = SC.ArrayController.create(
 /** @scope TableView.moviesController.prototype */ {
 
+	sideViewValue: 'movies',
+	
   summary: function() {
     var sel = this.get('selection');
     return sel ? "%@ votes".fmt(sel.get('votes')) : "";

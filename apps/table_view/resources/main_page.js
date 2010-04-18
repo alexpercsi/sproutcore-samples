@@ -37,12 +37,19 @@ TableView.mainPage = SC.Page.design({
     
     childViews: 'topView middleView bottomView'.w(),
 		childViews: ['topView', 'middleView'],
-    
+
     topView: SC.View.design( {
 			classNames: ['endash-toolbar'],
       layout: { top: 0, left: 0, right: 0, height: 50 }
     }),
     
+		// sideView: SC.SegmentedView.design({
+		// 	value: "Movies",
+		// 	classNames: ['side-view'],
+		//       layout: { top: 50, bottom: 0, left: 0, width: 200 },
+		// 	items: ['Movies', 'Sheet']
+		// }),
+		// 
     middleView: SC.TableView.design({
 	// contentView: SC.DataView.design({
       backgroundColor: "white",
@@ -54,7 +61,7 @@ TableView.mainPage = SC.Page.design({
       selectionBinding: 'TableView.moviesController.selection',
       canReorderContent: YES,
     // }),
-      layout: { top: 51, bottom: 0, left: 0, right: 0 }
+      layout: { top: 50, bottom: 0, left: 0, right: 0 }
 			}),
 
     bottomView: SC.View.design(SC.Border, {

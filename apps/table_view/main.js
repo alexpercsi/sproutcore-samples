@@ -12,6 +12,7 @@ TableView.main = function main() {
   var movies = TableView.store.findAll(TableView.Movie);
   TableView.moviesController.set('content', movies);  
   TableView.moviesController.set('columnNames', "title votes rating".w());
+  TableView.moviesController.set('sideViewValue', 'movies');
 
 } ;
 
