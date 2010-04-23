@@ -7,17 +7,20 @@
 
 var tableColumns = [
   SC.TableColumn.create({
+		contentValueKey: 'displayName',
     key:   'displayName',
     label: 'Title',
     width: 200
   }),
   
   SC.TableColumn.create({
+		contentValueKey: 'rating',
     key:   'rating',
     label: 'Rating',
     width: 80,
   }),
   SC.TableColumn.create({
+		contentValueKey: 'votes',
     key:   'votes',
     label: 'Votes',
     width: 80,
