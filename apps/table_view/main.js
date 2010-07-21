@@ -5,8 +5,8 @@
 /*globals TableView */
 
 TableView.main = function main() {
-	SC.BENCHMARK_RELOAD = YES ;
-		SC.Benchmark.verbose = YES ;
+	SC.BENCHMARK_RELOAD = NO ;
+		SC.Benchmark.verbose =NO ;
   TableView.getPath('mainPage.mainPane').append() ;
 
   var movies = TableView.store.findAll(TableView.Movie);

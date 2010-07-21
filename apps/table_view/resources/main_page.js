@@ -7,24 +7,21 @@
 
 var tableColumns = [
   SC.TableColumn.create({
-		contentValueKey: 'displayName',
     key:   'displayName',
     label: 'Title',
     width: 200
   }),
   
   SC.TableColumn.create({
-		contentValueKey: 'rating',
     key:   'rating',
     label: 'Rating',
-    width: 80,
+    width: 80
   }),
   SC.TableColumn.create({
-		contentValueKey: 'votes',
     key:   'votes',
     label: 'Votes',
-    width: 80,
-	})
+    width: 80
+  })
 
 
 ];
@@ -39,33 +36,39 @@ TableView.mainPage = SC.Page.design({
     backgroundColor: "#333",
     
     childViews: 'topView middleView bottomView'.w(),
-		childViews: ['topView', 'middleView'],
+    childViews: ['topView', 'middleView'],
 
     topView: SC.View.design( {
-			classNames: ['endash-toolbar'],
+      classNames: ['endash-toolbar'],
       layout: { top: 0, left: 0, right: 0, height: 50 }
     }),
-    
-		// sideView: SC.SegmentedView.design({
-		// 	value: "Movies",
-		// 	classNames: ['side-view'],
-		//       layout: { top: 50, bottom: 0, left: 0, width: 200 },
-		// 	items: ['Movies', 'Sheet']
-		// }),
-		// 
-    middleView: SC.TableView.design({
-	// contentView: SC.DataView.design({
-      backgroundColor: "white",
+
+    middleView: SC.View.design({
+      layout:{top:0,left:0,right:0,bottom:0},
+      childViews: 'table list'.w(),
+      table: SC.TableView.design({
+        backgroundColor: "white",
+
+        columns: tableColumns,
+        dataSourceBinding:   'TableView.moviesController.arrangedObjects',
+        contentBinding:   'TableView.moviesController',
+        selectionBinding: 'TableView.moviesController.selection',
+        canReorderContent: YES,
+        layout: { top: 50, bottom: 0, left: 0, right: 505 }
+      }),
       
-      columns: tableColumns,
-      // flexibleColumn:   tableColumns.objectAt(0),
-      dataSourceBinding:   'TableView.moviesController.arrangedObjects',
-// contentBinding:   'TableView.moviesController',
-      selectionBinding: 'TableView.moviesController.selection',
-      canReorderContent: YES,
-    // }),
-      layout: { top: 50, bottom: 0, left: 0, right: 0 }
-			}),
+      list: SC.ScrollView.design({
+        layout: {top:50, bottom:0, right:0, width:500},
+        contentView: SC.ListView.design({
+          
+          layout:{top:0,left:0,right:0,bottom:0},
+          backgroundColor:'white',
+
+          contentBinding: 'TableView.moviesController.arrangedObjects',
+          selectionBinding: 'TableView.moviesController.selection'
+        })
+      })
+    }),
 
     bottomView: SC.View.design(SC.Border, {
       layout: { bottom: 0, left: 0, right: 0, height: 41 },
